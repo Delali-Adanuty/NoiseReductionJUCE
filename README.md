@@ -42,7 +42,7 @@ _Note: This repository strictly tracks source code. You must build the binaries 
 
 Building a real-time DSP engine requires navigating strict memory constraints, compiler-specific behaviors, and complex audio plumbing.
 
-Read the full engineering breakdown of how this plugin was built, debugged, and optimized on the **[Project Documentation Site](#)**
+Read the full engineering breakdown of how this plugin was built, debugged, and optimized on the **[Project Documentation Site](https://delali-adanuty.github.io/NoiseReductionJUCE/)**
 
 ---
 
