@@ -1,0 +1,70 @@
+# ==========================================
+# Operating System Junk
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ==========================================
+# JUCE Projucer
+# ==========================================
+# Completely ignore the generated builds folder. 
+# This prevents gigabytes of intermediate MSVC/Xcode files from clogging your repo.
+Builds/
+
+# ==========================================
+# CMake (If you migrate away from Projucer later)
+# ==========================================
+build/
+out/
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# ==========================================
+# IDE & Local Editor Settings
+# ==========================================
+# Prevents your personal Visual Studio or VS Code window layouts from overriding others
+.idea/
+.vscode/
+*.swp
+*.swo
+*.suo
+*.user
+*.sln.docstates
+
+# ==========================================
+# Compiled Objects, Binaries, and Debug Symbols
+# ==========================================
+*.o
+*.obj
+*.lib
+*.a
+*.dll
+*.exe
+*.out
+*.app
+*.ilk
+*.pdb
+*.exp
+*.idb
+*.pch
+
+# ==========================================
+# Audio Plugin Formats 
+# (Catch-all in case they leak out of the Build folder)
+# ==========================================
+*.vst
+*.vst3
+*.component
+*.aaxplugin
+*.lv2
