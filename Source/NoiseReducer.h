@@ -37,6 +37,11 @@ private:
     juce::dsp::FFT                      fft;
     juce::dsp::WindowingFunction<float> hannWindow;
 
+    float noiseEnergy;
+    float vadThreshold;
+
+    int frameCount = 0;
+
     std::array<float, FFT_SIZE>         timeFrame;
     std::array<float, FFT_SIZE * 2>     complexBuffer;  // interleaved re/im, FFT input
     std::array<float, FFT_SIZE * 2>     fftOutput;      // separate FFT output buffer

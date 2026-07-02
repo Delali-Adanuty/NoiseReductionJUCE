@@ -1,36 +1,29 @@
-/*
-  ==============================================================================
-
-    This file contains the basic framework code for a JUCE plugin editor.
-
-  ==============================================================================
-*/
-
 #pragma once
-
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
 
-class NewProjectAudioProcessorEditor : public juce::AudioProcessorEditor
+class NewProjectAudioProcessorEditor : public juce::AudioProcessorEditor,
+    public juce::Timer
 {
 public:
     NewProjectAudioProcessorEditor(NewProjectAudioProcessor&);
     ~NewProjectAudioProcessorEditor() override;
 
-    // These two functions are called by JUCE to draw the window
     void paint(juce::Graphics&) override;
     void resized() override;
 
+    // Timer fires every 100ms to update the button label while recording
+    void timerCallback() override;
+
 private:
-    // A reference to the audio engine so we can send it new values
     NewProjectAudioProcessor& audioProcessor;
 
-    // The visual components
     juce::Slider alphaSlider;
-    juce::Label alphaLabel;
-
+    juce::Label  alphaLabel;
     juce::Slider betaSlider;
-    juce::Label betaLabel;
+    juce::Label  betaLabel;
+
+    juce::TextButton recordButton;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(NewProjectAudioProcessorEditor)
 };

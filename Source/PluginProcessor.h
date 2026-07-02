@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <JuceHeader.h>
 #include "NoiseReducer.h"
 
@@ -35,9 +35,13 @@ public:
     void getStateInformation(juce::MemoryBlock& destData) override;
     void setStateInformation(const void* data, int sizeInBytes) override;
 
-    // alpha=2.0 is a safe starting point
     std::atomic<float> alphaParameter{ 2.0f };
     std::atomic<float> betaParameter{ 0.01f };
+
+
+    void startRecording();
+    void stopRecording();
+    bool isCurrentlyRecording() const { return isRecording.load(); }
 
 private:
     static constexpr int FFT_SIZE = 512;
@@ -52,6 +56,19 @@ private:
     int  fifoReadIndex = 0;
     int  samplesInOutput = 0;
     int  hopCounter = 0;
+
+    // ── Recording ─
+    juce::AudioFormatManager formatManager;
+
+    juce::TimeSliceThread recordingThread{ "recording_thread" };
+
+    std::unique_ptr<juce::AudioFormatWriter::ThreadedWriter> inputWriter;
+    std::unique_ptr<juce::AudioFormatWriter::ThreadedWriter> outputWriter;
+
+
+    std::atomic<bool> isRecording{ false };
+
+    double currentSampleRate = 44100.0;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(NewProjectAudioProcessor)
 };

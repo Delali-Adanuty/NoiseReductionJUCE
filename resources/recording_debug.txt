@@ -1,0 +1,4 @@
+startRecording called
+Input path: C:\EXTRAS\Projects\JUCENoiseReduction\NewProject\resources\input_raw.wav
+Output path: C:\EXTRAS\Projects\JUCENoiseReduction\NewProject\resources\output_processed.wav
+Can write to C:/: 1
