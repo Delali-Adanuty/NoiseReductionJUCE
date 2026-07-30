@@ -69,7 +69,7 @@ With the C++ memory isolated and the VAD correctly tracking speech, the spectral
 
 Visualizing the algorithm against standard broadband fan noise confirms the pipeline's integrity.
 
-![Fan Noise Spectrogram](../resources/fan_noise_spectrogram.png)
+![Fan Noise Spectrogram](../docs/images/fan_noise_spectrogram.png)
 
 > _Figure 1: Time-frequency visualization comparing raw mic input (top) to processed output (bottom). The continuous noise floor is aggressively carved out while transient speech structures remain protected by the VAD._
 
@@ -77,7 +77,7 @@ Visualizing the algorithm against standard broadband fan noise confirms the pipe
 
 To definitively calculate the algorithm's effectiveness, we mapped the Signal-to-Noise Ratio (SNR) improvement across the frequency spectrum.
 
-![Fan Noise Performance](../resources/fan_noise_db_reduction.png)
+![Fan Noise Performance](../docs/images/fan_noise_db_reduction.png)
 
 > _Figure 2: The algorithm delivers a consistent ~15 dB of noise attenuation. Crucially, the reduction dips in the lower registers (< 3 kHz)—proving the VAD is actively protecting fundamental human speech frequencies from being hollowed out._
 

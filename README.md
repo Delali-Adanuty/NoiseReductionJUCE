@@ -16,11 +16,11 @@ The DSP pipeline has been mathematically verified to deliver significant attenua
 
 Below is the verified performance reduction against standard broadband fan noise:
 
-![Fan Noise Performance](/resources/fan_noise_db_reduction.png)
+![Fan Noise Performance](/docs/images/fan_noise_db_reduction.png)
 
 > **Figure 1:** _Frequency response analysis demonstrating ~15 dB of consistent noise attenuation. Note the targeted dip in reduction between 0–3 kHz; this is the algorithm's protection zone, allowing fundamental human speech frequencies to pass through with minimal processing._
 
-![Fan Noise Spectrogram](/resources/fan_noise_spectrogram.png)
+![Fan Noise Spectrogram](/docs/images/fan_noise_spectrogram.png)
 
 > **Figure 2:** _Time-frequency visualization comparing raw microphone input (top) to the processed output (bottom). The continuous grey noise floor is suppressed while transient vocal structures are preserved._
 
