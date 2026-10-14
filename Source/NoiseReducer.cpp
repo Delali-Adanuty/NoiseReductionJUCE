@@ -108,7 +108,7 @@ void NoiseReducer::processFrame(const float* input, float* output)
 
         if (!speechDetected && frameEnergy >= digitalSilenceThreshold)
         {
-            if (frameCount <= 20)
+            
             if (isLearningFrame)
                 noiseMagnitude[i] = (frameCount == 1) ? mag : (0.5f * noiseMagnitude[i] + 0.5f * mag);
             else if (mag > noiseMagnitude[i])
