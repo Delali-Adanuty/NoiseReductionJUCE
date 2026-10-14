@@ -173,7 +173,6 @@ The second plot shows the decrease in total signal power. This total includes sp
 
 The α and β values for these tests are not in the repository.
 
-> **NOTE:** I made all tests in this section before the correction in Section 8.3. In these tests, N(k) used the 0.5/0.5 rule after the noise estimate period. With the correction, the results can be different.
 
 ### 9.2 Fan Noise
 
