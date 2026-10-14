@@ -30,7 +30,7 @@ Unlike a traditional noise gate, this engine performs continuous time-frequency 
 
 ## Engineering Deep-Dive & Verification
 
-If you are interested in the DSP math, how the plugin was mathematically verified, performance benchmarks (spectrograms and SNR reduction charts), or the challenges of translating MATLAB prototypes into real-time C++ architecture, read the **[Behind the Scenes Documentation](link_to_docs.md)**.
+If you are interested in the DSP math, how the plugin was mathematically verified, performance benchmarks (spectrograms and SNR reduction charts), or the challenges of translating MATLAB prototypes into real-time C++ architecture, read the **[Behind the Scenes Documentation](https://delali-adanuty.github.io/NoiseReductionJUCE/)**.
 
 ---
 
