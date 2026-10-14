@@ -71,6 +71,7 @@ void NoiseReducer::processFrame(const float* input, float* output)
     }
 
     bool speechDetected = false;
+    bool isLearningFrame = false; 
     const float digitalSilenceThreshold = 0.0001f; 
 
     if (frameEnergy < digitalSilenceThreshold)
@@ -81,6 +82,7 @@ void NoiseReducer::processFrame(const float* input, float* output)
     {
         frameCount++;
         speechDetected = false;
+        isLearningFrame = true;
 
         if (frameCount == 1)
             noiseEnergy = frameEnergy;
@@ -107,6 +109,7 @@ void NoiseReducer::processFrame(const float* input, float* output)
         if (!speechDetected && frameEnergy >= digitalSilenceThreshold)
         {
             if (frameCount <= 20)
+            if (isLearningFrame)
                 noiseMagnitude[i] = (frameCount == 1) ? mag : (0.5f * noiseMagnitude[i] + 0.5f * mag);
             else if (mag > noiseMagnitude[i])
                 noiseMagnitude[i] = 0.90f * noiseMagnitude[i] + 0.10f * mag;
